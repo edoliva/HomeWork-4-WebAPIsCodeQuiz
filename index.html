@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="Assets/css/style.css" />
+    <title>Ed's Coding Assessment</title>
+  </head>
+
+  <body>
+    <header> 
+        <h3>Ed's Coding Assessment</h3>
+        <p><strong>Last registered score: </strong> <span id=""></span></p>
+        <p><strong>By user: </strong> <span id="user-email"></span></p>
+        <p><strong>Current time: </strong> <span id="timer"></span></p>
+    </header>
+    <!-- information box about the quiz -->
+    <div class="info-box">
+        <div class="info-title">
+            <span>Coding Quiz Challenge!</span>
+        </div>
+        <div class="info-list">
+            <ol>
+                <li class=info>Try to answer the following code-related questions within the<strong> 75 second </strong>time limit.</li>
+                <li class=info>Incorrect answers will remove time from the clock.</li>
+                <li class=info>The time remaining on the clock at the end of the quiz is your final score.</li>
+                <li class=info>Good luck!</li>
+            </ol>
+        </div>
+        <!-- start button  -->
+    <div class="start-button"><button>Start Quiz</button></div>
+    </div>
+
+    <!-- quiz box -->
+    <div class="quiz-box">
+        <section>
+            <div class="quiz-question">
+                <span id="questionTitle"></span>
+            </div>
+            <div class="quiz-answers">
+                <div class="answer">
+                    <span id="choice1">A1</span>
+                </div>
+                <div class="answer">
+                    <span id="choice2">A2</span>
+                </div>
+                <div class="answer">
+                    <span id="choice3" >A3</span>
+                </div>
+                <div class="answer">
+                    <span id="choice4" >A4</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right/Wrong footer within the quiz box -->
+        <footer>
+            <div class="rightwrong">
+            <p><strong>Your answer is: </strong> <span id="result"></span></p>
+            </div>
+            <button class="next-q-button" onclick="nextQuestion()">Next Question</button> 
+        </footer>
+    </div>
+
+    <!-- Final Score -->
+    <div class="final-score-box">
+        <h4>Quiz completed!</h4>
+        <p><strong>Your score: </strong> <span id="user-password"></span></p>
+        </br>
+        <div class="input-group">
+            <label for="initials">Enter initials:</label>
+            <input type="text" name="email" id="email" placeholder="ABC" />
+          </div>
+        <button id="submit-button">Submit</button></br>
+    </div>
+
+    <!-- High Score -->
+    <div class="high-score-box">
+        <h4>Highscores</h4></br>
+        <ul id="highscores"></ul>
+        <button id="back-button">Go Back</button></br>
+        <button id="clear-button">Clear</button></br>
+    </div>
+
+
+    <!-- <div class="clearfix">
+      <div class="card">
+        <h2>Sign Up</h2>
+        <form method="POST">
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="janedoe@mail.com" />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="supersecure123" />
+          </div>
+          <div id="msg"></div>
+          <button id="option1">Sign Up</button></br>
+          <button id="option2">Sign Up</button></br>
+          <button id="option3">Sign Up</button></br>
+          <button id="option4">Sign Up</button></br>
+          <div>
+            <h2>Last Registered User:</h2>
+            <p><strong>You chose:</strong> <span id="user-email"></span></p>
+            <p><strong>That answer is:</strong> <span id="user-password"></span></p>
+          </div>
+        </br></br></br></br>
+        </form>
+      </div>
+    </div> -->
+    
+    <script src="Assets/js/script.js"></script>
+  </body>
+</html>
