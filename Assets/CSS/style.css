@@ -66,13 +66,13 @@ button {
     height: fit-content;
     overflow: visible;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .quiz-box {
-    display: inline-block;
+    display: none;
     background-color: #fff;
     border: 1px solid #eceff1;
     border-radius: 8px;

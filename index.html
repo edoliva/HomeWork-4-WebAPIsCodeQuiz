@@ -13,7 +13,7 @@
         <h3>Ed's Coding Assessment</h3>
         <p><strong>Last registered score: </strong> <span id=""></span></p>
         <p><strong>By user: </strong> <span id="user-email"></span></p>
-        <p><strong>Current time: </strong> <span id="timer"></span></p>
+        <p><strong>Current time: </strong> <span id="countdown">75 sec</span></p>
     </header>
     <!-- information box about the quiz -->
     <div class="info-box">
@@ -39,17 +39,17 @@
                 <span id="questionTitle"></span>
             </div>
             <div class="quiz-answers">
-                <div class="answer">
-                    <span id="choice1">A1</span>
+                <div class="answer" id="answer1">
+                    <span id="choice1"></span>
                 </div>
-                <div class="answer">
-                    <span id="choice2">A2</span>
+                <div class="answer" id="answer2">
+                    <span id="choice2"></span>
                 </div>
-                <div class="answer">
-                    <span id="choice3" >A3</span>
+                <div class="answer" id="answer3">
+                    <span id="choice3"></span>
                 </div>
-                <div class="answer">
-                    <span id="choice4" >A4</span>
+                <div class="answer" id="answer4">
+                    <span id="choice4"></span>
                 </div>
             </div>
         </section>
@@ -57,7 +57,7 @@
         <!-- Right/Wrong footer within the quiz box -->
         <footer>
             <div class="rightwrong">
-            <p><strong>Your answer is: </strong> <span id="result"></span></p>
+            <p><strong>Your previous answer was: </strong> <span id="result"></span></p>
             </div>
             <button class="next-q-button" onclick="nextQuestion()">Next Question</button> 
         </footer>
@@ -72,7 +72,7 @@
             <label for="initials">Enter initials:</label>
             <input type="text" name="email" id="email" placeholder="ABC" />
           </div>
-        <button id="submit-button">Submit</button></br>
+        <button id="submit-button" class="submit-button">Submit</button></br>
     </div>
 
     <!-- High Score -->
