@@ -9,12 +9,12 @@
   </head>
 
   <body>
-    <header> 
+    <aside> 
         <h3>Ed's Coding Assessment</h3>
-        <p><strong>Last registered score: </strong> <span id=""></span></p>
-        <p><strong>By user: </strong> <span id="user-email"></span></p>
+        <p><strong>Last registered score: </strong> <span id="user-score"></span></p>
+        <p><strong>By user: </strong> <span id="last-user"></span></p>
         <p><strong>Current time: </strong> <span id="countdown">75 sec</span></p>
-    </header>
+    </aside>
     <!-- information box about the quiz -->
     <div class="info-box">
         <div class="info-title">
@@ -57,7 +57,7 @@
         <!-- Right/Wrong footer within the quiz box -->
         <footer>
             <div class="rightwrong">
-            <p><strong>Your previous answer was: </strong> <span id="result"></span></p>
+            <p><strong>Your answer was: </strong> <span id="result"></span></p>
             </div>
             <button class="next-q-button" onclick="nextQuestion()">Next Question</button> 
         </footer>
@@ -66,11 +66,11 @@
     <!-- Final Score -->
     <div class="final-score-box">
         <h4>Quiz completed!</h4>
-        <p><strong>Your score: </strong> <span id="user-password"></span></p>
+        <p><strong>Your score: </strong> <span id="your-score"></span></p>
         </br>
         <div class="input-group">
             <label for="initials">Enter initials:</label>
-            <input type="text" name="email" id="email" placeholder="ABC" />
+            <input type="text" name="initials" id="initials" placeholder="ABC" />
           </div>
         <button id="submit-button" class="submit-button">Submit</button></br>
     </div>
@@ -79,8 +79,8 @@
     <div class="high-score-box">
         <h4>Highscores</h4></br>
         <ul id="highscores"></ul>
-        <button id="back-button">Go Back</button></br>
-        <button id="clear-button">Clear</button></br>
+        <button id="back-button" onclick="location.reload()">Play Again</button></br>
+        <button id="clear-button" onclick="localStorage.clear()">Clear</button></br>
     </div>
 
 

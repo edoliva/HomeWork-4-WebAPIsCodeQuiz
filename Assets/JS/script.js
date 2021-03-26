@@ -36,12 +36,12 @@ var questions = [
 },
 ];
 
-var emailInput = document.querySelector("#email");
-var passwordInput = document.querySelector("#password");
-var signUpButton = document.querySelector("button");
-var msgDiv = document.querySelector("#msg");
-var userEmailSpan = document.querySelector("#user-email");
-var userPasswordSpan = document.querySelector("#user-password");
+var initialsInput = document.querySelector("#initials");
+
+var submitButton = document.querySelector("#submit-button");
+var lastUserSpan = document.querySelector("#last-user");
+var userScoreSpan = document.querySelector("#user-score");
+
 
 var infoBox = document.querySelector(".info-box");
 var quizBox = document.querySelector(".quiz-box");
@@ -60,6 +60,8 @@ var timerEl = document.getElementById('countdown');
 var questionAnswer = "";
 
 var propertyKeeper = {timeLeft: 74};
+var yourScore = document.querySelector("#your-score");
+
 var score = 0;
 var questionNum = 0
 
@@ -69,11 +71,14 @@ startButton.addEventListener("click", function(event) {
     console.log("start game");
     // create time to start countdown
     function countdown() {
+      // start at 74 because there is a about a 1 sec start lag on click from 75
       propertyKeeper.timeLeft = 74;
       // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
       var timeInterval = setInterval(function () {
-        if(propertyKeeper.timeLeft == 1) {
+        if(propertyKeeper.timeLeft <= 1 || questionNum == 7) {
           timerEl.textContent = 'GAME OVER';
+          clearInterval(timeInterval);
+          yourScore.textContent = Math.max(propertyKeeper.timeLeft,0);
           // use .css to change .info-box to hidden
           quizBox.setAttribute("style", "display: none;");
           // use .css to change .quiz-box to inline-block
@@ -85,12 +90,17 @@ startButton.addEventListener("click", function(event) {
           timerEl.textContent = propertyKeeper.timeLeft + ' sec';
           // Decrement `timeLeft` by 1
           propertyKeeper.timeLeft--;
-        } else {
-          // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-          timerEl.textContent = 'GAME OVER';
-          // Use `clearInterval()` to stop the timer
-          clearInterval(timeInterval);
         }
+      
+    //     if(questionNum == 7) {
+    //       clearInterval(timeInterval);
+    //       // use .css to change .info-box to hidden
+    //       quizBox.setAttribute("style", "display: none;");
+    //       // use .css to change .quiz-box to inline-block
+    //       finalScoreBox.setAttribute("style", "display: inline-block;");
+    //       yourScore.textContent = propertyKeeper.timeLeft;
+    //      };
+
       }, 1000);
     }
     countdown();
@@ -165,14 +175,18 @@ function nextQuestion() {
         quizBox.setAttribute("style", "display: none;");
         // use .css to change .quiz-box to inline-block
         finalScoreBox.setAttribute("style", "display: inline-block;");
+        yourScore.textContent = propertyKeeper.timeLeft;
   };
 };
   
-  submitButton.addEventListener("click", function(event) {
-  finalScoreBox.setAttribute("style", "display: none;");
-  // use .css to change .quiz-box to inline-block
-  highScoreBox.setAttribute("style", "display: inline-block;");
-});
+  // submitButton.addEventListener("click", function(event) {
+  // finalScoreBox.setAttribute("style", "display: none;");
+  // // use .css to change .quiz-box to inline-block
+  // highScoreBox.setAttribute("style", "display: inline-block;");
+// }
+// );
+
+
 
 
 
@@ -217,40 +231,50 @@ function nextQuestion() {
 //     }
 // }
 
+
 renderLastRegistered();
 
-function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute("class", type);
-}
-
 function renderLastRegistered() {
-  var email = localStorage.getItem("email");
-  var password = localStorage.getItem("password");
+  var initials = localStorage.getItem("initials");
+  var userScore = localStorage.getItem("userScore");
 
-  if (!email || !password) {
-    return;
-  }
+ 
 
-  userEmailSpan.textContent = email;
-  userPasswordSpan.textContent = password;
+  // if (!initials || !password) {
+  //   return;
+  // }
+
+  lastUserSpan.textContent = initials;
+  userScoreSpan.textContent = userScore;
+  // userPasswordSpan.textContent = password;
 }
 
-signUpButton.addEventListener("click", function(event) {
+submitButton.addEventListener("click", function(event) {
   event.preventDefault();
 
-  var email = document.querySelector("#email").value;
-  var password = document.querySelector("#password").value;
+  finalScoreBox.setAttribute("style", "display: none;");
+  // use .css to change .quiz-box to inline-block
+  highScoreBox.setAttribute("style", "display: inline-block;");
 
-  if (email === "") {
-    displayMessage("error", "Email cannot be blank");
-  } else if (password === "") {
-    displayMessage("error", "Password cannot be blank");
-  } else {
-    displayMessage("success", "Registered successfully");
+  var initials = document.querySelector("#initials").value;
+  // var password = document.querySelector("#password").value;
 
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
+  if (initials === "") {
+    alert("Enter SOMETHING!");
+  } 
+  // else if (password === "") {
+  //   displayMessage("error", "Password cannot be blank");
+  // } 
+  else {
+    // displayMessage("success", "Registered successfully");
+
+    localStorage.setItem("initials", initials);
+    // +1 because there is ONE LAST final tick in the countdown function
+    localStorage.setItem("userScore", propertyKeeper.timeLeft+1);
+    // localStorage.setItem("password", password);
     renderLastRegistered();
   }
-});
+}
+);
+
+
