@@ -63,7 +63,7 @@ var questionAnswer = "";
 var scoresANDinitials = [];
 
 // start at 74 because there is a about a 1 sec start lag on click from 75
-var propertyKeeper = {timeLeft: 74};
+var timeLeft = 74;
 var yourScore = document.querySelector("#your-score");
 
 var questionNum = 0
@@ -75,24 +75,24 @@ startButton.addEventListener("click", function(event) {
     // create time to start countdown
     function countdown() {
       // start at 74 because there is a about a 1 sec start lag on click from 75
-      propertyKeeper.timeLeft = 74;
+      timeLeft = 74;
       // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
       var timeInterval = setInterval(function () {
-        if(propertyKeeper.timeLeft <= 1 || questionNum == 7) {
+        if(timeLeft <= 1 || questionNum == 7) {
           timerEl.textContent = 'GAME OVER';
           clearInterval(timeInterval);
-          yourScore.textContent = Math.max(propertyKeeper.timeLeft,0);
+          yourScore.textContent = Math.max(timeLeft,0);
           // use .css to change .info-box to hidden
           questionBox.setAttribute("style", "display: none;");
           // use .css to change .quiz-box to inline-block
           quizComplete.setAttribute("style", "display: inline-block;");
         };
         // As long as the `timeLeft` is greater than 1
-        if (propertyKeeper.timeLeft > 1) {
+        if (timeLeft > 1) {
           // Set the `textContent` of `timerEl` to show the remaining seconds
-          timerEl.textContent = propertyKeeper.timeLeft + ' sec';
+          timerEl.textContent = timeLeft + ' sec';
           // Decrement `timeLeft` by 1
-          propertyKeeper.timeLeft--;
+          timeLeft--;
         }
       }, 1000);
     }
@@ -113,7 +113,7 @@ startButton.addEventListener("click", function(event) {
     result = (answerPicked === questionAnswer);
     if (!result) {
       rightWrong.textContent = "WRONG! -10 sec";
-      propertyKeeper.timeLeft = propertyKeeper.timeLeft-10; 
+      timeLeft = timeLeft-10; 
     } else {console.log("right");
     rightWrong.textContent = "Right.";
     }
@@ -124,7 +124,7 @@ startButton.addEventListener("click", function(event) {
     result = (answerPicked === questionAnswer);
     if (!result) {
       rightWrong.textContent = "WRONG! -10 sec";
-      propertyKeeper.timeLeft = propertyKeeper.timeLeft-10; 
+      timeLeft = timeLeft-10; 
     } else {console.log("right");
     rightWrong.textContent = "Right.";
     }
@@ -135,7 +135,7 @@ startButton.addEventListener("click", function(event) {
     result = (answerPicked === questionAnswer);
     if (!result) {
       rightWrong.textContent = "WRONG! -10 sec";
-      propertyKeeper.timeLeft = propertyKeeper.timeLeft-10; 
+      timeLeft = timeLeft-10; 
     } else {console.log("right");
     rightWrong.textContent = "Right.";
     }
@@ -146,7 +146,7 @@ startButton.addEventListener("click", function(event) {
     result = (answerPicked === questionAnswer);
     if (!result) {
       rightWrong.textContent = "WRONG! -10 sec";
-      propertyKeeper.timeLeft = propertyKeeper.timeLeft-10; 
+      timeLeft = timeLeft-10; 
     } else {console.log("right");
     rightWrong.textContent = "Right.";
     }
@@ -185,7 +185,7 @@ function nextQuestion() {
         questionBox.setAttribute("style", "display: none;");
         // use .css to change .quiz-box to inline-block
         quizComplete.setAttribute("style", "display: inline-block;");
-        yourScore.textContent = propertyKeeper.timeLeft;
+        yourScore.textContent = timeLeft;
   };
 };
   
@@ -212,11 +212,11 @@ submitButton.addEventListener("click", function(event) {
 
   localStorage.setItem("initials", initials);
   // +1 because there is ONE LAST final tick in the countdown function
-  localStorage.setItem("userScore", Math.max(propertyKeeper.timeLeft+1, 0));
+  localStorage.setItem("userScore", Math.max(timeLeft+1, 0));
   renderLastRegistered();
   
   var scoreInitialText = {
-    score: Math.max(propertyKeeper.timeLeft+1, 0),
+    score: Math.max(timeLeft+1, 0),
     initial: initials
   };
   scoresANDinitials = JSON.parse(localStorage.getItem("scoresANDinitials"));
