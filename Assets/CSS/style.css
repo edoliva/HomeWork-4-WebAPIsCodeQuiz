@@ -89,6 +89,19 @@ button {
     transform: translate(-50%, -50%);
   }
 
+  #answer1 {
+    display:list-item;
+  }
+  #answer2 {
+    display:list-item;
+  }
+  #answer3 {
+    display:list-item;
+  }
+  #answer4 {
+    display:list-item;
+  }
+
   #quiz-complete {
     display: none;
     background-color: #fff;
