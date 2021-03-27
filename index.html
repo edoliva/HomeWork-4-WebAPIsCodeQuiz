@@ -16,7 +16,7 @@
         <p><strong>Current time: </strong> <span id="countdown">75 sec</span></p>
     </aside>
     <!-- information box about the quiz -->
-    <div class="info-box">
+    <div id="startbox">
         <div class="info-title">
             <span>Coding Quiz Challenge!</span>
         </div>
@@ -33,7 +33,7 @@
     </div>
 
     <!-- quiz box -->
-    <div class="quiz-box">
+    <div id="questionbox">
         <section>
             <div class="quiz-question">
                 <span id="questionTitle"></span>
@@ -57,14 +57,14 @@
         <!-- Right/Wrong footer within the quiz box -->
         <footer>
             <div class="rightwrong">
-            <p><strong>Your answer was: </strong> <span id="result"></span></p>
+            <p><strong>Your answer is: </strong> <span id="result"></span></p>
             </div>
             <button class="next-q-button" onclick="nextQuestion()">Next Question</button> 
         </footer>
     </div>
 
     <!-- Final Score -->
-    <div class="final-score-box">
+    <div id="quiz-complete">
         <h4>Quiz completed!</h4>
         <p><strong>Your score: </strong> <span id="your-score"></span></p>
         </br>
@@ -76,40 +76,18 @@
     </div>
 
     <!-- High Score -->
-    <div class="high-score-box">
+    <div id="high-score">
         <h4>Highscores</h4></br>
-        <ul id="highscores"></ul>
+        <ol id="highscores">
+          <li id=place0></li>
+          <li id=place1></li>
+          <li id=place2></li>
+          <li id=place3></li>
+          <li id=place4></li>
+        </ol> 
         <button id="back-button" onclick="location.reload()">Play Again</button></br>
-        <button id="clear-button" onclick="localStorage.clear()">Clear</button></br>
+        <button id="clear-button" onclick="clearALLhighscore()">Clear All</button></br>
     </div>
-
-
-    <!-- <div class="clearfix">
-      <div class="card">
-        <h2>Sign Up</h2>
-        <form method="POST">
-          <div class="input-group">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" placeholder="janedoe@mail.com" />
-          </div>
-          <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="supersecure123" />
-          </div>
-          <div id="msg"></div>
-          <button id="option1">Sign Up</button></br>
-          <button id="option2">Sign Up</button></br>
-          <button id="option3">Sign Up</button></br>
-          <button id="option4">Sign Up</button></br>
-          <div>
-            <h2>Last Registered User:</h2>
-            <p><strong>You chose:</strong> <span id="user-email"></span></p>
-            <p><strong>That answer is:</strong> <span id="user-password"></span></p>
-          </div>
-        </br></br></br></br>
-        </form>
-      </div>
-    </div> -->
     
     <script src="Assets/js/script.js"></script>
   </body>

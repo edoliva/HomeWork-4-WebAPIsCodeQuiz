@@ -53,7 +53,7 @@ button {
     float: center;
   }
 
-.info-box {
+#startbox {
     display: inline-block;
     background-color: #fff;
     border: 1px solid #eceff1;
@@ -71,7 +71,7 @@ button {
     transform: translate(-50%, -50%);
   }
 
-  .quiz-box {
+  #questionbox {
     display: none;
     background-color: #fff;
     border: 1px solid #eceff1;
@@ -84,12 +84,12 @@ button {
     height: fit-content;
     overflow: visible;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  .final-score-box {
+  #quiz-complete {
     display: none;
     background-color: #fff;
     border: 1px solid #eceff1;
@@ -102,12 +102,12 @@ button {
     height: fit-content;
     overflow: visible;
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  .high-score-box {
+  #high-score {
     display: none;
     background-color: #fff;
     border: 1px solid #eceff1;
@@ -120,7 +120,7 @@ button {
     height: fit-content;
     overflow: visible;
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
