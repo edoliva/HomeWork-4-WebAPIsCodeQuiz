@@ -8,6 +8,8 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   background-color: #eff5f8;
+  min-height: 100vh;
+  justify-content: flex-start;
 }
 
 h2 {
@@ -22,7 +24,7 @@ button {
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 12 px;
   letter-spacing: 0.21px;
   line-height: 16px;
   max-width: 255px;
@@ -40,7 +42,7 @@ button {
     border-radius: 8px;
     color: #fff;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 12 px;
     letter-spacing: 0.21px;
     line-height: 16px;
     max-width: 80%;
@@ -60,7 +62,7 @@ button {
     border-radius: 8px;
     box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
       rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
-    margin: 2%;
+    margin-left: 20px;
     padding: 20px;
     width: fit-content;
     height: fit-content;
@@ -85,7 +87,7 @@ button {
     overflow: visible;
     position: absolute;
     top: 55%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
   }
 
@@ -116,7 +118,7 @@ button {
     overflow: visible;
     position: absolute;
     top: 45%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
   }
 
@@ -134,7 +136,7 @@ button {
     overflow: visible;
     position: absolute;
     top: 45%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
   }
 
@@ -170,50 +172,82 @@ input:hover {
   background-color: #e8eaed;
 }
 
-.card {
-  background-color: #fff;
+.work {
+  margin-left: 20px;
+  padding: 20px;
+  clear: both;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color:darkblue;
+  color: #e8eaed;
   border: 1px solid #eceff1;
   border-radius: 8px;
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
     rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
   margin: 2%;
-  padding: 20px;
-  width: 70%;
-  height: 100%;
+  /* width: fit-content; */
+  /* height: fit-content; */
   overflow: visible;
-  top: 5%;
-  display: inline-block;
+  position: absolute;
+  /* top: 40%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
 }
 
-.card::after {
-  content: " ";
-  display: block;
-  clear: both;
+.work div {
+  color: white;
+  font-size: 16px;
 }
 
-.clearfix::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
+@media screen and (max-width: 1160px) {
+  #startbox{
+    width: 90%;
+    height: fit-content;
+    top: 40%;
+    left: 10px;
+    transform: translate(0%, 0%);
+    border-radius: 8px;
+    margin: 2%;
+    bottom: 2%;
+    }
+  
+  #questionbox {
+    width: 90%;
+    height: fit-content;
+    top: 40%;
+    left: 10px;
+    transform: translate(0%, 0%);
+    border-radius: 8px;
+    margin: 2%;
+    bottom: 2%;
+  }
 
-#msg {
-  visibility: hidden;
-  margin-top: 20px;
-  font-weight: 700;
-  height: 1.2em;
-  font-size: 1.2em;
-}
+  #quiz-complete {
+    width: 90%;
+    height: fit-content;
+    top: 40%;
+    left: 10px;
+    transform: translate(0%, 0%);
+    border-radius: 8px;
+    margin: 2%;
+    bottom: 2%;
+  }
 
-#msg.success,
-#msg.error {
-  visibility: visible;
-}
-
-#msg.success {
-  color: #001b44;;
-}
-
-#msg.error {
-  color: #e6252c;
+  #high-score {
+    width: 90%;
+    height: fit-content;
+    top: 40%;
+    left: 10px;
+    transform: translate(0%, 0%);
+    border-radius: 8px;
+    margin: 2%;
+    bottom: 2%;
+  }
+  .work {
+    width: 90%;
+    height: fit-content;
+    top: 2%;
+    }
 }
