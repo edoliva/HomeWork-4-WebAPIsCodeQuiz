@@ -251,3 +251,21 @@ input:hover {
     top: 2%;
     }
 }
+
+@media screen and (max-height: 570px) {
+  #startbox{
+    top: 60%;
+    }
+
+  #questionbox {
+    top: 60%;
+  }
+
+  #quiz-complete {
+    top: 60%;
+  }
+
+  #high-score {
+    top: 60%;
+  }
+}
