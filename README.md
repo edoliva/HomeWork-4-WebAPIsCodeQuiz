@@ -1,6 +1,6 @@
-# HomeWork-4-WebAPIsCodeQuiz
+# API Code Quiz
  
-## HW 4 Description
+## Description
 This webpage was created so a user could take a timed quiz that removes time from the countdown clock if they get a question wrong. Whatever their remaining time is at the end of the quiz will be their score. 
 
 They can enter their initials and have their score logged.
@@ -15,7 +15,7 @@ They can see their score and initials, clear it from local storage if they desir
 - [Credits](#credits)
 - [License](#license)
 ## Installation
-Clone or download this repository on GitHub then open "edoliva.github.io/HomeWork-4-WebAPIsCodeQuiz/" in a browser.  
+Clone or download this repository on GitHub then open "edoliva.github.io/WebAPIsCodeQuiz/" in a browser.  
 ## Criteria
 - The user must click the Start Quiz button to move on from the information box to the quiz.
 - The user must choose an answer and then click next question to move on to the next question.  
